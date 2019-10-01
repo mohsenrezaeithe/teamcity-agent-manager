@@ -1,6 +1,7 @@
 # TeamCity Agent Manager
 
-*This is a rework of and extention to the [AutoAuth plugin](https://github.com/FLGMwt/team-city-agent-auto-auth)*
+*This is a rework of and extention to the [AutoAuth plugin](https://github.com/FLGMwt/team-city-agent-auto-auth)*.
+
 A TeamCity server plugin to automatically manager build agents on events captured by the server. This plugin helps automating the life cycle of build agents in the infrastructure, eliminating the need to manually authorize, unauthorize, and/or cleanup build agents. An appealing use case for this life cycle management would be the use of [Cloud Profiles](https://www.jetbrains.com/help/teamcity/agent-cloud-profile.html) for automatically scaling agent pools based on workload.
 
 # Distribution
