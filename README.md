@@ -3,7 +3,7 @@ A TeamCity server plugin to automatically manager build agents on events capture
 
 # Build
 
-Run `ant dist` to create a dist for using with the TeamCity server.
+Run `ant dist` to create a dist for using with the TeamCity server. Requires `teamcity.distribution` and `teamcity.data.directory` path variables.
 
 # Agent Configuration
 
