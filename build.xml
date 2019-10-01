@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TeamCityAgentManager" default="dist">
+
+  <property file="build.properties"/>
+  <property name="plugin.name" value="AgentManager"/>
+  <property name="javac2.home" value="${basedir}/lib-compile"/>
+  <property name="version" value="1.0"/>
+
+  <import file="teamcity-common.xml"/>
+  <import file="teamcityagentmanager.xml"/>
+
+  <target name="package" depends="define.version">
+    <package.teamcity.plugin name="${plugin.name}" server.output="${server.output.dir}"
+                             server.lib.dir="lib" server.lib.includes="*.jar"
+                             plugin.descriptor.file="${basedir}/teamcity-plugin.xml"
+                             plugin.version="${plugin.version}"/>
+  </target>
+
+  <target name="define.version">
+    <tstamp>
+      <format property="current.time" pattern="yyyyMMddHHmm"/>
+    </tstamp>
+    <property name="plugin.version" value="${version}.${current.time}"/>
+  </target>
+
+  <target name="dist" depends="all" description="Same as 'all'"/>
+  <target name="all" depends="check.teamcitydistribution,teamcityagentmanager.all,package"
+          description="Invoke this to build your plugin"/>
+
+  <target name="clean" depends="teamcityagentmanager.clean"/>
+
+  <target name="deploy" depends="dist, check.path.variable.teamcitydatadirectory">
+    <deploy.teamcity.plugin name="${plugin.name}"/>
+  </target>
+
+  <target name="patch.plugin.descriptor.idea.artifact" depends="define.version">
+    <echo message="Replacing '@version@' on '${plugin.version}' in the copied plugin descriptor file."/>
+    <replace file="${artifact.output.path}/teamcity-plugin.xml" value="${plugin.version}">
+      <replacetoken><![CDATA[@version@]]></replacetoken>
+    </replace>
+  </target>
+</project>
