@@ -6,7 +6,7 @@
     <display-name>Agent Manager</display-name>
     <version>@version@</version>
     <description>
-      If an agent has the "autoAuthorize" or "autoManage" parameter set to true, they will be automatically authorized when they are registered and unauthorized/removed when unregistered.
+      If an agent has the "autoAuthorize" or "autoManage" parameter set to true, they will be automatically authorized when they are registered and unauthorized/removed when unregistered. Based on https://github.com/FLGMwt/team-city-agent-auto-auth.
     </description>
 
     <vendor>

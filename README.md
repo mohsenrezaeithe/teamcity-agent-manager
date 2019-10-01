@@ -1,9 +1,15 @@
-# TeamCity Auto Agent Manager
+# TeamCity Agent Manager
+
+*This is a rework of and extention to the [AutoAuth plugin](https://github.com/FLGMwt/team-city-agent-auto-auth)*
 A TeamCity server plugin to automatically manager build agents on events captured by the server. This plugin helps automating the life cycle of build agents in the infrastructure, eliminating the need to manually authorize, unauthorize, and/or cleanup build agents. An appealing use case for this life cycle management would be the use of [Cloud Profiles](https://www.jetbrains.com/help/teamcity/agent-cloud-profile.html) for automatically scaling agent pools based on workload.
+
+# Distribution
+
+All distributions of this plugin can be found on the [JetBrain's Plugin portal](https://plugins.jetbrains.com/plugin/13101-agent-manager).
 
 # Build
 
-Run `ant dist` to create a dist for using with the TeamCity server. Requires `teamcity.distribution` and `teamcity.data.directory` path variables.
+Run `ant dist` to create a dist for using with a TeamCity server distribution. Requires `teamcity.distribution` and `teamcity.data.directory` path variables.
 
 # Agent Configuration
 
