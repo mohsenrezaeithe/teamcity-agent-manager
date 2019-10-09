@@ -2,7 +2,7 @@
 <project name="TeamCityAgentManager" default="dist">
 
   <property file="build.properties"/>
-  <property name="plugin.name" value="AgentManager"/>
+  <property name="plugin.name" value="AgentAutoAddRemove"/>
   <property name="javac2.home" value="${basedir}/lib-compile"/>
   <property name="version" value="1.0"/>
 
