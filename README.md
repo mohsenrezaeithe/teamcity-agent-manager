@@ -4,9 +4,11 @@
 
 A TeamCity server plugin to automatically manager build agents on events captured by the server. This plugin helps automating the life cycle of build agents in the infrastructure, eliminating the need to manually authorize, unauthorize, and/or cleanup build agents. An appealing use case for this life cycle management would be the use of [Cloud Profiles](https://www.jetbrains.com/help/teamcity/agent-cloud-profile.html) for automatically scaling agent pools based on workload.
 
+**NOTE:** This plugin eliminates the need for manually authorizing, unauthorizing, and cleaning up TeamCity agents with the server, hence, it is important that this configuration is only used with a TeamCity server that is only exposed to trusted environments and agents. 
+
 # Distribution
 
-All distributions of this plugin can be found on the [JetBrain's Plugin portal](https://plugins.jetbrains.com/plugin/13101-agent-manager).
+All distributions of this plugin can be found on the [JetBrain's Plugin portal](https://plugins.jetbrains.com/plugin/13105-agent-auto-add-remove).
 
 # Build
 
@@ -14,15 +16,15 @@ Run `ant dist` to create a dist for using with a TeamCity server distribution. R
 
 # Agent Configuration
 
-The following parameters can be used in the [build agent configuration](https://www.jetbrains.com/help/teamcity/build-agent-configuration.html):
+The following parameters can be used in the [build agent configuration](https://www.jetbrains.com/help/teamcity/build-agent-configuration.html) to test the functionality with the server:
   1. `autoAuthorize=true` for authorizing and unauthorizing agents on registration and unregistration events.
   1. `autoManage=true` for cleaning up agents in addition to authorization and unauthorization.
 
-**NOTE:** Because this plugin circumvents the manual agent authorization step which is guarded by TeamCity authentication, only use this if your TeamCity server is inaccessible to the public Internet. 
-
 # Server Configuration
 
-1. Upload `AutoManage.zip` to the TeamCity server plugin directory (or from the UI at `Administration` → `Plugins List`).
+In a testing environment:
+
+1. Upload `AgentAutoAddRemove.zip` to the TeamCity server plugin directory (or from the UI at `Administration` → `Plugins List`).
 1. Reload or restart the TeamCity server.
 1. Add the right agent parameter to the configuration in `$agentDir/conf/buildAgent.properties`.
 1. Start the build agent.
