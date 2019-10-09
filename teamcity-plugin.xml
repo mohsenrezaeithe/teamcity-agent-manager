@@ -2,11 +2,13 @@
 <teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="urn:schemas-jetbrains-com:teamcity-plugin-v1-xml">
   <info>
-    <name>AgentManager</name>
-    <display-name>Agent Manager</display-name>
+    <name>AgentAutoAddRemove</name>
+    <display-name>Agent Auto Add Remove</display-name>
     <version>@version@</version>
     <description>
       If an agent has the "autoAuthorize" or "autoManage" parameter set to true, they will be automatically authorized when they are registered and unauthorized/removed when unregistered. Based on https://github.com/FLGMwt/team-city-agent-auto-auth.
+
+      NOTE: This plugin eliminates the need for manually authorizing, unauthorizing, and cleaning up TeamCity agents with the server, hence, it is important that this configuration is only used with a TeamCity server that is only exposed to trusted environments and agents.
     </description>
 
     <vendor>
