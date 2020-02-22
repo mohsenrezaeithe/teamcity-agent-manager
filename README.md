@@ -19,6 +19,7 @@ Run `ant dist` to create a dist for using with a TeamCity server distribution. R
 The following parameters can be used in the [build agent configuration](https://www.jetbrains.com/help/teamcity/build-agent-configuration.html) to test the functionality with the server:
   1. `autoAuthorize=true` for authorizing and unauthorizing agents on registration and unregistration events.
   1. `autoManage=true` for cleaning up agents in addition to authorization and unauthorization.
+  1. `agentPool=<poolName>` for specifing a non-default agent pool to join on auto-authorization event.
 
 # Server Configuration
 
