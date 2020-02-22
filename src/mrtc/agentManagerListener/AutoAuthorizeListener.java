@@ -77,7 +77,7 @@ public class AutoAuthorizeListener extends BuildServerAdapter {
             .findFirst().orElse(null);
 
     if (agentPool == null) {
-      LOG.warn("Agent Pool '" + agentPoolName + "' could not be found. Agent will be registered in the default pool");
+      LOG.warn(String.format("Agent Pool '%s' could not be found. Agent will be registered in the default pool", agentPool));
       return;
     }
 
